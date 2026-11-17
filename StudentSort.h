@@ -27,7 +27,7 @@
  */
 bool compareId(Student *x, Student *y)
 {
-    return x->id < y->id;
+    return x->getId() < y->getId();
 }
 
 /*
@@ -38,32 +38,32 @@ bool compareId(Student *x, Student *y)
  */
 bool compareName(Student *x, Student *y)
 {
-    if (x->lastName == y->lastName)
+    if (x->getLastName() == y->getLastName())
     {
         // compare first names b/c last name is identical
         unsigned int i = 0;
-        while ((i < x->firstName.length()) && (i < y->firstName.length()))
+        while ((i < x->getFirstName().length()) && (i < y->getFirstName().length()))
         {
-            if (x->firstName[i] < y->firstName[i])
+            if (x->getFirstName()[i] < y->getFirstName()[i])
                 return true;
-            else if (x->firstName[i] > y->firstName[i])
+            else if (x->getFirstName()[i] > y->getFirstName()[i])
                 return false;
             ++i;
         }
-        return (x->firstName.length() < y->firstName.length());
+        return (x->getFirstName().length() < y->getFirstName().length());
     }
     else
     {
         unsigned int i = 0;
-        while ((i < x->lastName.length()) && (i < y->lastName.length()))
+        while ((i < x->getLastName().length()) && (i < y->getLastName().length()))
         {
-            if (x->lastName[i] < y->lastName[i])
+            if (x->getLastName()[i] < y->getLastName()[i])
                 return true;
-            else if (x->lastName[i] > y->lastName[i])
+            else if (x->getLastName()[i] > y->getLastName()[i])
                 return false;
             ++i;
         }
-        return (x->lastName.length() < y->lastName.length());
+        return (x->getLastName().length() < y->getLastName().length());
     }
 }
 
@@ -73,7 +73,7 @@ bool compareName(Student *x, Student *y)
  */
 bool compareGpa(Student *x, Student *y)
 {
-    return x->gpa < y->gpa;
+    return x->getGpa() < y->getGpa();
 }
 
 /*
@@ -101,10 +101,6 @@ void studentSort(list<Student *> &classRoll, int typeOfSort)
     {
         // Sort by GPA
         classRoll.sort(compareGpa);
-    }
-    else
-    {
-        std::cout << "Invalid typeOfSort value: " << typeOfSort << std::endl;
     }
 }
 
