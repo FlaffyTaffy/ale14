@@ -4,12 +4,12 @@
  * below sorted by last name then first name
  * in ascending order.
  *
- * Group member #1: 
- * Group member #2: 
- * Group member #3: 
- * Group member #4: 
- * Group member #5: 
- * Group member #6: 
+ * Group member #1: Almada Leonardo 
+ * Group member #2: Antonakaskis Konstantinos
+ * Group member #3: Muilenburg Alston 
+ * Group member #4: Nguyen Danny
+ * Group member #5: Ostrowski Tyler
+ * Group member #6: Zhou Jason
  *
  */
 
