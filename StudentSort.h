@@ -26,7 +26,7 @@
  * Otherwise, return false.
  */
 bool compareId(Student * x, Student * y){
-
+    return x->id < y->id;
 }
 
 /*
@@ -36,7 +36,24 @@ bool compareId(Student * x, Student * y){
  * The comparison should be done in a case sensitive manner.
  */
 bool compareName(Student * x, Student * y){
-
+    if (x->lastName == y->lastName) {
+        // compare first names b/c last name is identical
+        unsigned int i = 0;
+        while ((i < x->firstName.length()) && (i < y->firstName.length())) {
+            if (x->firstName[i] < y->firstName[i]) return true;
+            else if (x->firstName[i] > y->firstName[i]) return false;
+            ++i;
+        }
+        return (x->firstName.length() < y->firstName.length());
+    } else {
+        unsigned int i = 0;
+        while ((i < x->lastName.length()) && (i < y->lastName.length())) {
+            if (x->lastName[i] < y->lastName[i]) return true;
+            else if (x->lastName[i] > y->lastName[i]) return false;
+            ++i;
+        }
+        return (x->lastName.length() < y->lastName.length());
+    }
 }
 
 /*
@@ -44,7 +61,7 @@ bool compareName(Student * x, Student * y){
  * Otherwise, return false.
  */
 bool compareGpa(Student * x, Student * y){
-
+    return x->gpa < y->gpa;
 }
 
 /*
